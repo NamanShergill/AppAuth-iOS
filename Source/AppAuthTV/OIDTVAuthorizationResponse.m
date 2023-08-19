@@ -149,7 +149,7 @@ static NSString *const kRequestKey = @"request";
 #pragma mark -
 
 - (OIDTVTokenRequest *)tokenPollRequest {
-  return [self tokenPollRequestWithAdditionalParameters:nil additionalHeaders:nil];
+  return [self tokenPollRequestWithAdditionalParameters:nil];
 }
 
 - (OIDTVTokenRequest *)tokenPollRequestWithAdditionalParameters:
@@ -159,32 +159,7 @@ static NSString *const kRequestKey = @"request";
                  deviceCode:_deviceCode
                    clientID:self.request.clientID
                clientSecret:self.request.clientSecret
-       additionalParameters:additionalParameters
-          additionalHeaders:nil];
-}
-
-- (OIDTVTokenRequest *)tokenPollRequestWithAdditionalHeaders:
-    (NSDictionary<NSString *, NSString *> *)additionalHeaders {
-  return [[OIDTVTokenRequest alloc]
-      initWithConfiguration:(OIDTVServiceConfiguration *)self.request.configuration
-                 deviceCode:_deviceCode
-                   clientID:self.request.clientID
-               clientSecret:self.request.clientSecret
-       additionalParameters:nil
-          additionalHeaders:additionalHeaders];
-}
-
-- (OIDTVTokenRequest *)tokenPollRequestWithAdditionalParameters:
-    (NSDictionary<NSString *, NSString *> *)additionalParameters
-                                              additionalHeaders:
-    (NSDictionary<NSString *, NSString *> *)additionalHeaders {
-  return [[OIDTVTokenRequest alloc]
-      initWithConfiguration:(OIDTVServiceConfiguration *)self.request.configuration
-                 deviceCode:_deviceCode
-                   clientID:self.request.clientID
-               clientSecret:self.request.clientSecret
-       additionalParameters:additionalParameters
-          additionalHeaders:additionalHeaders];
+       additionalParameters:additionalParameters];
 }
 
 @end

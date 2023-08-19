@@ -45,14 +45,6 @@ static NSString *const kTestAdditionalParameterKey = @"A";
  */
 static NSString *const kTestAdditionalParameterValue = @"1";
 
-/*! @brief Test key for the @c additionalHeaders property.
- */
-static NSString *const kTestAdditionalHeaderKey = @"B";
-
-/*! @brief Test value for the @c additionalHeaders property.
- */
-static NSString *const kTestAdditionalHeaderValue = @"2";
-
 /*! @brief Test value for the @c clientID property.
  */
 static NSString *const kTestClientID = @"ClientID";
@@ -270,26 +262,22 @@ static int const kTestInterval = 5;
   XCTAssertEqualObjects(pollRequest.additionalParameters, @{});
 }
 
-/*! @brief Tests the @c testTokenPollRequestWithAdditionalParametersAdditionalHeaders method with one additional
-         parameter and one additional header.
+/*! @brief Tests the @c tokenPollRequestWithAdditionalParameters method with one additional
+         parameter.
  */
-- (void)testTokenPollRequestWithAdditionalParametersAdditionalHeaders {
+- (void)testTokenPollRequestWithAdditionalParameters {
   OIDTVAuthorizationResponse *testResponse = [self testAuthorizationResponse];
 
   NSDictionary<NSString *, NSString *> *testAdditionalParameters =
       @{kTestAdditionalParameterKey : kTestAdditionalParameterValue};
-  
-  NSDictionary<NSString *, NSString *> *testAdditionalHeaders =
-      @{kTestAdditionalHeaderKey : kTestAdditionalHeaderValue};
 
   OIDTVTokenRequest *pollRequest =
-      [testResponse tokenPollRequestWithAdditionalParameters:testAdditionalParameters additionalHeaders:testAdditionalHeaders];
+      [testResponse tokenPollRequestWithAdditionalParameters:testAdditionalParameters];
 
   XCTAssertEqualObjects(pollRequest.deviceCode, kTestDeviceCode);
   XCTAssertEqualObjects(pollRequest.clientID, kTestClientID);
   XCTAssertEqualObjects(pollRequest.clientSecret, kTestClientSecret);
   XCTAssertEqualObjects(pollRequest.additionalParameters, testAdditionalParameters);
-  XCTAssertEqualObjects(pollRequest.additionalHeaders, testAdditionalHeaders);
 }
 
 @end

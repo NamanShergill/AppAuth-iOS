@@ -516,8 +516,7 @@ OIDTVAuthorizationRequest *request =
                                                     clientId:kClientID
                                                 clientSecret:kClientSecret
                                                       scopes:@[ OIDScopeOpenID, OIDScopeProfile ]
-                                        additionalParameters:nil
-                                           additionalHeaders:nil];
+                                        additionalParameters:nil];
 
 // performs authentication request
 OIDTVAuthorizationInitialization initBlock =

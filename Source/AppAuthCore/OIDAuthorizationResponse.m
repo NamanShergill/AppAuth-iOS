@@ -184,13 +184,11 @@ static NSString *const kTokenExchangeRequestException =
 #pragma mark -
 
 - (OIDTokenRequest *)tokenExchangeRequest {
-  return [self tokenExchangeRequestWithAdditionalParameters:nil additionalHeaders:nil];
+  return [self tokenExchangeRequestWithAdditionalParameters:nil];
 }
 
 - (OIDTokenRequest *)tokenExchangeRequestWithAdditionalParameters:
-    (NSDictionary<NSString *, NSString *> *)additionalParameters
-                                                additionalHeaders:
-    (NSDictionary<NSString *, NSString *> *)additionalHeaders {
+    (NSDictionary<NSString *, NSString *> *)additionalParameters {
   // TODO: add a unit test to confirm exception is thrown when expected and the request is created
   //       with the correct parameters.
   if (!_authorizationCode) {
@@ -206,8 +204,7 @@ static NSString *const kTokenExchangeRequestException =
                                                   scope:nil
                                            refreshToken:nil
                                            codeVerifier:_request.codeVerifier
-                                   additionalParameters:additionalParameters
-                                      additionalHeaders:additionalHeaders];
+                                   additionalParameters:additionalParameters];
 }
 
 @end

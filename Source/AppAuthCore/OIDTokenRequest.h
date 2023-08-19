@@ -95,13 +95,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, readonly, nullable) NSDictionary<NSString *, NSString *> *additionalParameters;
 
-/*! @brief The client's additional token request headers.
- */
-@property(nonatomic, readonly, nullable) NSDictionary<NSString *, NSString *> *additionalHeaders;
-
 /*! @internal
     @brief Unavailable. Please use
-        initWithConfiguration:grantType:code:redirectURL:clientID:additionalParameters:additionalHeaders:.
+        initWithConfiguration:grantType:code:redirectURL:clientID:additionalParameters:.
  */
 - (instancetype)init NS_UNAVAILABLE;
 
@@ -117,7 +113,6 @@ NS_ASSUME_NONNULL_BEGIN
     @param refreshToken The refresh token.
     @param codeVerifier The PKCE code verifier.
     @param additionalParameters The client's additional token request parameters.
-    @param additionalHeaders The client's additional token request headers.
  */
 - (instancetype)initWithConfiguration:(OIDServiceConfiguration *)configuration
                grantType:(NSString *)grantType
@@ -128,8 +123,7 @@ NS_ASSUME_NONNULL_BEGIN
                   scopes:(nullable NSArray<NSString *> *)scopes
             refreshToken:(nullable NSString *)refreshToken
             codeVerifier:(nullable NSString *)codeVerifier
-    additionalParameters:(nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-       additionalHeaders:(nullable NSDictionary<NSString *, NSString *> *)additionalHeaders;
+    additionalParameters:(nullable NSDictionary<NSString *, NSString *> *)additionalParameters;
 
 /*! @brief Designated initializer.
     @param configuration The service's configuration.
@@ -145,7 +139,6 @@ NS_ASSUME_NONNULL_BEGIN
     @param refreshToken The refresh token.
     @param codeVerifier The PKCE code verifier.
     @param additionalParameters The client's additional token request parameters.
-    @param additionalHeaders The client's additional token request headers.
  */
 - (instancetype)initWithConfiguration:(OIDServiceConfiguration *)configuration
                grantType:(NSString *)grantType
@@ -157,7 +150,6 @@ NS_ASSUME_NONNULL_BEGIN
             refreshToken:(nullable NSString *)refreshToken
             codeVerifier:(nullable NSString *)codeVerifier
     additionalParameters:(nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-       additionalHeaders:(nullable NSDictionary<NSString *, NSString *> *)additionalHeaders
     NS_DESIGNATED_INITIALIZER;
 
 /*! @brief Designated initializer for NSSecureCoding.

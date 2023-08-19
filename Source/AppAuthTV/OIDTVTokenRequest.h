@@ -35,14 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /*! @internal
     @brief Unavailable. Please use
-        @c initWithConfiguration:deviceCode:clientID:clientSecret:additionalParameters:additionalHeaders:
+        @c initWithConfiguration:deviceCode:clientID:clientSecret:additionalParameters:
         or @c initWithCoder:.
 */
 - (instancetype)init NS_UNAVAILABLE;
 
 /*! @internal
     @brief Unavailable. Please use
-        @c initWithConfiguration:deviceCode:clientID:clientSecret:additionalParameters:additionalHeaders:
+        @c initWithConfiguration:deviceCode:clientID:clientSecret:additionalParameters:
         or @c initWithCoder:.
 */
 - (instancetype)initWithConfiguration:(OIDServiceConfiguration *)configuration
@@ -56,13 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
                          codeVerifier:(nullable NSString *)codeVerifier
                  additionalParameters:
                      (nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-                    additionalHeaders:
-                     (nullable NSDictionary<NSString *, NSString *> *)additionalHeaders
     NS_UNAVAILABLE;
 
 /*! @internal
     @brief Unavailable. Please use
-        @c initWithConfiguration:deviceCode:clientID:clientSecret:additionalParameters:additionalHeaders:
+        @c initWithConfiguration:deviceCode:clientID:clientSecret:additionalParameters:
         or @c initWithCoder:.
 */
 - (instancetype)initWithConfiguration:(OIDServiceConfiguration *)configuration
@@ -76,8 +74,6 @@ NS_ASSUME_NONNULL_BEGIN
                          codeVerifier:(nullable NSString *)codeVerifier
                  additionalParameters:
                      (nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-                    additionalHeaders:
-                     (nullable NSDictionary<NSString *, NSString *> *)additionalHeaders
     NS_UNAVAILABLE;
 
 /*! @brief Designated initializer.
@@ -86,7 +82,6 @@ NS_ASSUME_NONNULL_BEGIN
     @param clientID The client identifier.
     @param clientSecret The client secret (nullable).
     @param additionalParameters The client's additional token request parameters.
-    @param additionalHeaders The client's additional token request headers.
 */
 - (instancetype)initWithConfiguration:(OIDTVServiceConfiguration *)configuration
                            deviceCode:(NSString *)deviceCode
@@ -94,8 +89,6 @@ NS_ASSUME_NONNULL_BEGIN
                          clientSecret:(nullable NSString *)clientSecret
                  additionalParameters:
                      (nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-                    additionalHeaders:
-                     (nullable NSDictionary<NSString *, NSString *> *)additionalHeaders
     NS_DESIGNATED_INITIALIZER;
 
 /*! @brief Designated initializer for NSSecureCoding.

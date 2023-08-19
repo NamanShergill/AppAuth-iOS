@@ -43,7 +43,6 @@ static NSString *const kOIDTVDeviceTokenGrantType = @"urn:ietf:params:oauth:gran
                                                                      clientID:
                                                                  clientSecret:
                                                          additionalParameters:
-                                                            additionalHeaders:
                                                              ))
 
 - (instancetype)initWithConfiguration:(OIDServiceConfiguration *)configuration
@@ -57,15 +56,12 @@ static NSString *const kOIDTVDeviceTokenGrantType = @"urn:ietf:params:oauth:gran
                          codeVerifier:(nullable NSString *)codeVerifier
                  additionalParameters:
                      (nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-                    additionalHeaders:
-                     (nullable NSDictionary<NSString *, NSString *> *)additionalHeaders
     OID_UNAVAILABLE_USE_INITIALIZER(@selector
                                     (initWithConfiguration:
                                                   deviceCode:
                                                     clientID:
                                                 clientSecret:
                                         additionalParameters:
-                                           additionalHeaders:
                                             ))
 
 - (instancetype)initWithConfiguration:(OIDServiceConfiguration *)configuration
@@ -79,23 +75,19 @@ static NSString *const kOIDTVDeviceTokenGrantType = @"urn:ietf:params:oauth:gran
                          codeVerifier:(nullable NSString *)codeVerifier
                  additionalParameters:
                      (nullable NSDictionary<NSString *, NSString *> *)additionalParameters
-                    additionalHeaders:
-                     (nullable NSDictionary<NSString *, NSString *> *)additionalHeaders
     OID_UNAVAILABLE_USE_INITIALIZER(@selector
                                      (initWithConfiguration:
                                                   deviceCode:
                                                     clientID:
                                                 clientSecret:
                                         additionalParameters:
-                                           additionalHeaders:
                                               ))
 
 - (instancetype)initWithConfiguration:(OIDTVServiceConfiguration *)configuration
                            deviceCode:(NSString *)deviceCode
                              clientID:(NSString *)clientID
                          clientSecret:(NSString *)clientSecret
-                 additionalParameters:(NSDictionary<NSString *, NSString *> *)additionalParameters
-                    additionalHeaders:(NSDictionary<NSString *, NSString *> *)additionalHeaders {
+                 additionalParameters:(NSDictionary<NSString *, NSString *> *)additionalParameters {
   self = [super initWithConfiguration:configuration
                             grantType:kOIDTVDeviceTokenGrantType
                     authorizationCode:nil
@@ -105,8 +97,7 @@ static NSString *const kOIDTVDeviceTokenGrantType = @"urn:ietf:params:oauth:gran
                                 scope:nil
                          refreshToken:nil
                          codeVerifier:nil
-                 additionalParameters:additionalParameters
-                    additionalHeaders:additionalHeaders];
+                 additionalParameters:additionalParameters];
 
   if (self) {
     _deviceCode = [deviceCode copy];

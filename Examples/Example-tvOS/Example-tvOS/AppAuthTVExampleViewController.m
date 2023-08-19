@@ -176,8 +176,7 @@ static NSString *const kExampleAuthStateKey = @"authState";
                                                       clientId:kClientID
                                                   clientSecret:kClientSecret
                                                         scopes:@[ OIDScopeOpenID, OIDScopeProfile ]
-                                          additionalParameters:nil
-                                             additionalHeaders:nil];
+                                          additionalParameters:nil];
 
   OIDTVAuthorizationInitialization initBlock =
       ^(OIDTVAuthorizationResponse *_Nullable response, NSError *_Nullable error) {

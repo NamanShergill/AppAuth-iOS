@@ -50,14 +50,6 @@ static NSString *const kTestAdditionalParameterKey = @"A";
  */
 static NSString *const kTestAdditionalParameterValue = @"1";
 
-/*! @brief Test key for the @c additionalHeaders property.
- */
-static NSString *const kTestAdditionalHeaderKey = @"B";
-
-/*! @brief Test value for the @c additionalHeaders property.
- */
-static NSString *const kTestAdditionalHeaderValue = @"2";
-
 /*! @brief Test key for the @c clientID parameter in the HTTP request.
  */
 static NSString *const kTestClientIDKey = @"client_id";
@@ -129,8 +121,7 @@ static NSString *const kOIDTVDeviceTokenGrantType =
                  deviceCode:kDeviceCodeValue
                    clientID:kTestClientID
                clientSecret:kTestClientSecret
-       additionalParameters:@{kTestAdditionalParameterKey : kTestAdditionalParameterValue}
-          additionalHeaders:@{kTestAdditionalHeaderKey : kTestAdditionalHeaderValue}];
+       additionalParameters:@{kTestAdditionalParameterKey : kTestAdditionalParameterValue}];
 }
 
 /*! @brief Tests the initializer
@@ -148,8 +139,6 @@ static NSString *const kOIDTVDeviceTokenGrantType =
   XCTAssertEqualObjects(request.clientSecret, kTestClientSecret);
   XCTAssertEqualObjects(request.additionalParameters,
                         @{kTestAdditionalParameterKey:kTestAdditionalParameterValue});
-  XCTAssertEqualObjects(request.additionalHeaders,
-                        @{kTestAdditionalHeaderKey:kTestAdditionalHeaderValue});
 }
 
 /*! @brief Tests the @c NSCopying implementation by round-tripping an instance through the copying
