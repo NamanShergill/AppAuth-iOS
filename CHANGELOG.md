@@ -1,3 +1,9 @@
+# 1.6.2
+- Increased minimum iOS and macOS versions to 9.0 and 10.12 respectively to fix [framework build issue](https://github.com/openid/AppAuth-iOS/issues/765)
+
+# 1.6.1
+- Increased minimum iOS and macOS versions to fix [build issue](https://github.com/openid/AppAuth-iOS/pull/761)
+
 # 1.6.0
 - Added a `prefersEphemeralSession` parameter for external user-agents. ([#645](https://github.com/openid/AppAuth-iOS/pull/645))
 - Fixed errors encountered when using secure coding to decode `OIDAuthState`. ([#656](https://github.com/openid/AppAuth-iOS/pull/656), [#721](https://github.com/openid/AppAuth-iOS/pull/721))
